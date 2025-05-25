@@ -36,4 +36,5 @@ spec:
   ports:
   - port: 3016 # Service port
     targetPort: 3015 # Container port 
-  type: LoadBalancer 
+  type: LoadBalancer
+  
