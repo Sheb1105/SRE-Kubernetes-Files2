@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: flower-app-deployment
-spec: 
+spec:
   replicas: 3
   selector:
     matchLabels:
@@ -19,7 +19,7 @@ spec:
           limits:
             memory: "250Mi"
             cpu: "500m"
-          request:
+          requests:
             memory: "128Mi"
             cpu: "50m"
         ports:
