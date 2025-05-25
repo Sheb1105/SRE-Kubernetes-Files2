@@ -6,11 +6,11 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: web
+      app: joseph
   template:
     metadata:
       labels:
-        app: web
+        app: joseph
     spec:
       containers:
       - name: cart-app
@@ -24,3 +24,16 @@ spec:
             cpu: "50m"
         ports:
         - containerPort: 3015
+---
+# Writing Service.yaml to expose the app
+apiVersion: v1
+kind: Service
+metadata:
+  name: joseph-app-svc
+spec:
+  selector:
+    app: joseph
+  ports:
+  - port: 3016 # Service port
+    targetPort: 3015 # Container port 
+  type: LoadBalancer 
